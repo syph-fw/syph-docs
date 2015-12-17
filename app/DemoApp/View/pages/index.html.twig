@@ -1,11 +1,61 @@
 {% extends 'layout.html.twig' %}
-{% block titile %}Syph-Framework{% endblock%}
+{% block title %}Syph-Framework{% endblock%}
 {% block body %}
-    <div class="mdl-layout__header">
-        <div class="mdl-grid">
-            <h1>Em construção</h1>
+    {#<div class="mdl-layout__header">#}
+        {#<div class="mdl-grid">#}
+            {#<h1>Em construção</h1>#}
+        {#</div>#}
+    {#</div>#}
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+        <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+            <div class="mdl-layout__header-row">
+                <span class="android-title mdl-layout-title">
+                    <img class="android-logo-image" src="{{ asset('/assets/images/logo.png') }}">
+                </span>
+                <!-- Add spacer, to align navigation to the right in desktop -->
+                <div class="android-header-spacer mdl-layout-spacer"></div>
+
+                <!-- Navigation -->
+                <div class="android-navigation-container">
+                    <nav class="android-navigation mdl-navigation">
+                        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Home</a>
+                        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Sobre</a>
+                        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Documentação</a>
+                    </nav>
+                </div>
+              <span class="android-mobile-title mdl-layout-title">
+                <img class="android-logo-image" src="images/android-logo.png">
+              </span>
+
+            </div>
         </div>
 
+        <div class="android-drawer mdl-layout__drawer">
+            <span class="mdl-layout-title">
+              <img class="android-logo-image-menu-sidebar" src="{{ asset('/assets/images/logo.png') }}">
+            </span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Home</a>
+                <a class="mdl-navigation__link" href="">Sobre</a>
+                <div class="android-drawer-separator"></div>
+                <span class="mdl-navigation__link" href="">Documentação</span>
+                <a class="mdl-navigation__link" href="">Instalação</a>
+                <a class="mdl-navigation__link" href="">MVC</a>
+                <a class="mdl-navigation__link" href="">Rotas</a>
+                <a class="mdl-navigation__link" href="">Controller</a>
+
+            </nav>
+        </div>
+
+        <div class="android-content mdl-layout__content">
+            <a name="top"></a>
+            <div class="android-be-together-section mdl-typography--text-center">
+                <div class="logo-font android-slogan">Já pensou que pode ser fácil?</div>
+                <div class="logo-font android-sub-slogan">Syph um framework PHP para lhe ajudar a entender...</div>
+
+            </div>
+        </div>
     </div>
-    <span class="text-center">Em alguns dias você lançaremos o site do Syph Framework.</span>
+    {#<span class="text-center">Em alguns dias você lançaremos o site do Syph Framework.</span>#}
 {% endblock%}
