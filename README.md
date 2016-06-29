@@ -1,6 +1,2 @@
-# Syph-Docs
-
-#Documentação do Syph Framework
-
-Projeto para criação da documentação do Framework
----
+#Syph-App
+Syph Framework implementado em uma aplica��o em branco
