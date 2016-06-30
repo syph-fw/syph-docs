@@ -185,7 +185,7 @@ pre[class*=language-][data-language]:before{
 }
 @media screen and (max-width:767px){
     .main-content{
-        padding:30px 20px!important
+        padding:70px 20px!important
     }
     .container-fluid .main-content{
         padding-left:20px
@@ -199,6 +199,12 @@ pre[class*=language-][data-language]:before{
     }
     .container-fluid .sidebar{
         padding-left:20px
+    }
+
+    .panel{
+        width: 60%;
+        right: 20%;
+        margin-top:-40% ;
     }
 
 }
@@ -277,7 +283,7 @@ pre[class*=language-][data-language]:before{
     transition:.2s ease
 }
 .navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover{
-    color:#fff
+    color: #537b91
 }
 .navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{
     color:#1d6391;
@@ -426,7 +432,7 @@ pre[class*=language-][data-language]:before{
         right:0!important;
         z-index:7!important;
         box-shadow:0 0 10px 0 rgba(0,0,0,.2)!important;
-        background-color:#5cc7b2!important
+        background-color:#f3f3f3!important
     }
 
 }

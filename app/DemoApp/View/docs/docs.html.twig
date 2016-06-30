@@ -49,7 +49,7 @@
             <aside class="col-md-3 col-sm-3 sidebar">
 
                 <ul class="sidenav dropable sticky">
-                    <li><a href="index.html">Documentação</a></li>
+                    <li><a href="#">Documentação</a></li>
                     <li>
                         <a class="active" href="#">Começando</a>
                         <ul>
@@ -63,6 +63,13 @@
 
                     <li>
                         <a href="#">Componentes</a>
+                        <ul>
+                            <li><a class="active" href="">Router</a></li>
+                            <li><a href="">Container</a></li>
+                            <li><a href="">Form</a></li>
+                            <li><a href="">Cache</a></li>
+                            <li><a href="">Logs</a></li>
+                        </ul>
                     </li>
                 </ul>
 
@@ -99,4 +106,12 @@
         </div>
     </main>
 
+{% endblock %}
+{% block custom_js %}
+    <script src="{{ asset('/assets/vendor/jquery.match.height/jquery.match.height.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/assets/vendor/prism/prism.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/assets/vendor/slim.scroll/slim.scroll.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/assets/vendor/lity/lity.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/assets/vendor/clipboard/clipboard.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/assets/js/custom.js') }}" type="text/javascript"></script>
 {% endblock %}
