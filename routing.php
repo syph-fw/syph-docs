@@ -17,3 +17,21 @@ RouterCollection::route(
         }
     )
 );
+
+RouterCollection::route(
+    'docs',
+    new Route('/docs', function(){
+            $controller = 'DemoApp:HomeController:documentation';
+            return array('controller'=>$controller,'args'=>array());
+        }
+    )
+);
+
+RouterCollection::route(
+    'download',
+    new Route('/download', function(){
+            $controller = 'DemoApp:HomeController:download';
+            return array('controller'=>$controller,'args'=>array());
+        }
+    )
+);

@@ -15,12 +15,18 @@ class HomeController extends BaseController
 {
 
     public function index(){
-
-        $logger = $this->get('logger');
         
-        $logger->addInfo('Olá estou vivo!');
+        return View::render($this->createView('DemoApp:frontend/index.html.twig'),array());
+    }
 
-        return View::render($this->createView('DemoApp:example/index.html.twig'),array());
+    public function documentation(){
+
+        return View::render($this->createView('DemoApp:docs/docs.html.twig'),array());
+    }
+
+    public function download(){
+
+        return View::render($this->createView('DemoApp:docs/download.html.twig'),array());
     }
 
 

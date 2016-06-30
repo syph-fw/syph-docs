@@ -32,16 +32,16 @@ color 0.2s ease
 transition:color 0.2s ease
 }
 .panel {
-
+font-family: 'Lato', sans-serif;
 font-size:1.3em;
 position:absolute;
 z-index:10;
-width:200px;
-height:220px;
+width:40%;
+/*height:220px;*/
 background:#eee;
 top:50%;
-left:50%;
-margin:-110px 0 0 -100px;
+right:30%;
+margin:-6% 0 0 0;
 padding:20px;
 border-radius:4px;
 box-sizing:border-box;
@@ -115,7 +115,7 @@ html,
 body {
 width:100%;
 height:100%;
-background:#fff
+background-color:#1d6391
 }
 canvas {
 display:block;
@@ -123,7 +123,7 @@ vertical-align:bottom
 }
 #particles-js {
 width:100%;
-height:100%;
+height:99.4%;
 background-color:#1d6391;
 background-size:cover;
 background-position:50% 50%
