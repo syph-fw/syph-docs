@@ -6,7 +6,7 @@
                 <ul class="sidenav dropable sticky sidebar-doc-syph">
                     <li><a href="#">Documentação</a></li>
                     <li>
-                        <a class="active" href="#">Começando</a>
+                        <a class="{% if menu_active == 'm1'%}active{% endif %}" href="#">Começando</a>
                         <ul>
                             <li>
                                 <a class="{% if class_active == 'link-concept'%}active{% endif %}" href="/docs">
@@ -37,13 +37,13 @@
                     </li>
 
                     <li>
-                        <a href="#">Componentes</a>
+                        <a class="{% if menu_active == 'm2'%}active{% endif %}" href="#">Componentes</a>
                         <ul>
-                            <li><a href="">Router</a></li>
-                            <li><a href="">Container</a></li>
-                            <li><a href="">Form</a></li>
-                            <li><a href="">Cache</a></li>
-                            <li><a href="">Logs</a></li>
+                            <li><a class="{% if class_active == 'router'%}active{% endif %}" href="/router">Router</a></li>
+                            <li><a class="{% if class_active == 'container'%}active{% endif %}" href="/container">Container</a></li>
+                            <li><a class="{% if class_active == 'form'%}active{% endif %}" href="/form">Form</a></li>
+                            <li><a class="{% if class_active == 'cache'%}active{% endif %}" href="/cache">Cache</a></li>
+                            <li><a class="{% if class_active == 'logging'%}active{% endif %}" href="/logging">Logs</a></li>
                         </ul>
                     </li>
                 </ul>

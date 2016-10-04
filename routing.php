@@ -62,3 +62,49 @@ RouterCollection::route(
         }
     )
 );
+
+RouterCollection::route(
+    'router-component',
+    new Route('/router', function(){
+            $controller = 'DemoApp:HomeController:routerComponent';
+            return array('controller'=>$controller,'args'=>array());
+        }
+    )
+);
+
+
+RouterCollection::route(
+    'container-component',
+    new Route('/container', function(){
+            $controller = 'DemoApp:HomeController:containerComponent';
+            return array('controller'=>$controller,'args'=>array());
+        }
+    )
+);
+
+RouterCollection::route(
+    'form-component',
+    new Route('/form', function(){
+            $controller = 'DemoApp:HomeController:formComponent';
+            return array('controller'=>$controller,'args'=>array());
+        }
+    )
+);
+
+RouterCollection::route(
+    'cache-component',
+    new Route('/cache', function(){
+            $controller = 'DemoApp:HomeController:cacheComponent';
+            return array('controller'=>$controller,'args'=>array());
+        }
+    )
+);
+
+RouterCollection::route(
+    'logs-component',
+    new Route('/logging', function(){
+            $controller = 'DemoApp:HomeController:logsComponent';
+            return array('controller'=>$controller,'args'=>array());
+        }
+    )
+);
