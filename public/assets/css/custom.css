@@ -2830,3 +2830,79 @@ figcaption{
     }
 
 }
+
+/*#concept-page>.sidenav>li>ul a.link-concept,
+#installation-page .link-installation,
+#work-with-routes-page .link-work-with-routes,
+#first-controller-page .link-first-controller,
+#first-view-page .link-first-view{*/
+
+/*}*/
+/*#concept-page>.sidenav>li>ul a.link-concept,*/
+/*#installation-page>.sidenav>li>ul a.link-installation,*/
+/*#work-with-routes-page>.sidenav>li>ul a.link-work-with-routes,*/
+/*#first-controller-page>.sidenav>li>ul a.link-first-controller,*/
+/*#first-view-page>.sidenav>li>ul a.link-first-view*/
+/*{*/
+    /*position:relative*/
+/*}*/
+/*#concept-page>.sidenav>li>ul a.link-concept:before,*/
+/*#installation-page>.sidenav>li>ul a.link-installation:before,*/
+/*#work-with-routes-page>.sidenav>li>ul a.link-work-with-routes:before,*/
+/*#first-controller-page>.sidenav>li>ul a.link-first-controller:before,*/
+/*#first-view-page>.sidenav>li>ul a.link-first-view:before*/
+/*{*/
+    /*content:' ';*/
+    /*position:absolute;*/
+    /*left:-26px;*/
+    /*top:12px;*/
+    /*width:6px;*/
+    /*height:6px;*/
+    /*border-radius:100%;*/
+    /*background-color:#1d6391*/
+/*}*/
+
+/*#concept-page .sidenav a.link-concept,*/
+/*#installation-page .sidenav a.link-installation,*/
+/*#work-with-routes-page .sidenav a.link-work-with-routes,*/
+/*#first-controller-page .sidenav a.link-first-controller,*/
+/*#first-view-page .sidenav a.link-first-view*/
+/*{*/
+    /*text-decoration:none;*/
+    /*opacity:1;*/
+    /*color:#1d6391;*/
+    /*font-weight:400;*/
+/*}*/
+
+/*#concept-page .sidenav>li>a.link-concept,*/
+/*#installation-page .sidenav>li>a.link-installation,*/
+/*#work-with-routes-page .sidenav>li>a.link-work-with-routes,*/
+/*#first-controller-page .sidenav>li>a.link-first-controller,*/
+/*#first-view-page .sidenav>li>a.link-first-view*/
+/*{*/
+    /*color:#1d6391*/
+/*}*/
+
+/*#concept-page .sidenav>li>ul a.link-concept,#concept-page .sidenav>li>ul li.link-concept a,*/
+/*#installation-page .sidenav>li>ul a.link-installation,#installation-page .sidenav>li>ul li.link-installation a,*/
+/*#work-with-routes-page .sidenav>li>ul a.link-work-with-routes,#work-with-routes-page .sidenav>li>ul li.link-work-with-routes a,*/
+/*#first-controller-page .sidenav>li>ul a.link-first-controller,#first-controller-page .sidenav>li>ul li.link-first-controller a,*/
+/*#first-view-page .sidenav>li>ul a.link-first-view,#first-view-page .sidenav>li>ul li.link-first-view a*/
+/*{*/
+    /*position:relative*/
+/*}*/
+/*#concept-page .sidenav>li>ul a.link-concept:before,.sidenav>li>ul li.link-concept a:before,*/
+/*#installation-page .sidenav>li>ul a.link-installation:before,.sidenav>li>ul li.link-installation a:before,*/
+/*#work-with-routes-page .sidenav>li>ul a.link-work-with-routes:before,.sidenav>li>ul li.link-work-with-routes a:before,*/
+/*#first-controller-page .sidenav>li>ul a.link-first-controller:before,.sidenav>li>ul li.link-first-controller a:before,*/
+/*#first-view-page .sidenav>li>ul a.link-first-view:before,.sidenav>li>ul li.link-first-view a:before*/
+/*{*/
+    /*content:' ';*/
+    /*position:absolute;*/
+    /*left:-26px;*/
+    /*top:12px;*/
+    /*width:6px;*/
+    /*height:6px;*/
+    /*border-radius:100%;*/
+    /*background-color:#1d6391*/
+/*}*/

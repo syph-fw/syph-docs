@@ -1,0 +1,20 @@
+{
+  "name": "syph-doc",
+  "homepage": "https://github.com/sylabs/syph-docs",
+  "description": "dependencies to project Syph Doc.",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": ">=1.9.1",
+    "bootstrap": "3.3.*",
+    "jquery-validation": "1.*",
+    "fontawesome": "4.2.*",
+    "particles.js": "^2.0.0",
+    "matchHeight": "^0.7.0",
+    "prism": "^1.5.1",
+    "PACE": "pace#^1.0.2",
+    "lity": "^2.1.1",
+    "jquery-slimscroll": "^1.3.8"
+  }
+}

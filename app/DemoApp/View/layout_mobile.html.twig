@@ -27,11 +27,12 @@
 
     <!-- **Additional - stylesheets** -->
     <link rel="stylesheet" href="{{ asset('/packages/bootstrap/dist/css/bootstrap.min.css') }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/master.css') }}" type="text/css" media="all"/>
     <link rel="stylesheet" href="{{ asset('/assets/css/responsive.css') }}" type="text/css" media="all"/>
 
     <!-- **Font Awesome** -->
     <link rel="stylesheet" href="{{ asset('/packages/fontawesome/css/font-awesome.min.css') }}" type="text/css" />
-    {% block custom_css %}{% endblock %}
+
     <!-- **Google - Fonts** -->
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -45,7 +46,6 @@
 
 <!-- **jQuery** -->
 <script src="{{ asset('/assets/js/jquery-1.10.2.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/packages/bootstrap/dist/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
 
 <script src="{{ asset('/packages/PACE/pace.min.js') }}" type="text/javascript"></script>
@@ -54,10 +54,13 @@
 <script src="{{ asset('/assets/js/jquery.viewport.js') }}" type="text/javascript"></script>
 
 
+<script src="{{ asset('/packages/bootstrap/dist/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/assets/js/retina.js') }}" type="text/javascript"></script>
-{% block custom_js %}{% endblock %}
 
 
+<script src="{{ asset('/packages/particles.js/particles.min.js') }}" type="text/javascript"></script>
+
+<script src="{{ asset('/assets/js/custom_mobile.js') }}" type="text/javascript"></script>
 
 </body>
 </html>

@@ -1,0 +1,52 @@
+
+
+            <!-- Sidebar -->
+            <aside class="col-md-3 col-sm-3 sidebar">
+
+                <ul class="sidenav dropable sticky sidebar-doc-syph">
+                    <li><a href="#">Documentação</a></li>
+                    <li>
+                        <a class="active" href="#">Começando</a>
+                        <ul>
+                            <li>
+                                <a class="{% if class_active == 'link-concept'%}active{% endif %}" href="/docs">
+                                    Conceitos
+                                </a>
+                            </li>
+                            <li>
+                                <a class="{% if class_active == 'link-installation'%}active{% endif %}" href="/installation">
+                                    Instalação
+                                </a>
+                            </li>
+                            <li>
+                                <a class="{% if class_active == 'link-work-with-routes'%}active{% endif %}" href="/working-with-routes">
+                                    Trabalhando com Rotas
+                                </a>
+                            </li>
+                            <li>
+                                <a class="{% if class_active == 'link-first-controller'%}active{% endif %}" href="/my-first-controller">
+                                    Meu Primeiro Controller
+                                </a>
+                            </li>
+                            <li>
+                                <a class="{% if class_active == 'link-first-view'%}active{% endif %}" href="/my-first-view">
+                                    Minha primeira View
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">Componentes</a>
+                        <ul>
+                            <li><a href="">Router</a></li>
+                            <li><a href="">Container</a></li>
+                            <li><a href="">Form</a></li>
+                            <li><a href="">Cache</a></li>
+                            <li><a href="">Logs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </aside>
+            <!-- END Sidebar -->

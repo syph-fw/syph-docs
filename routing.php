@@ -28,9 +28,36 @@ RouterCollection::route(
 );
 
 RouterCollection::route(
-    'download',
-    new Route('/download', function(){
-            $controller = 'DemoApp:HomeController:download';
+    'installation',
+    new Route('/installation', function(){
+            $controller = 'DemoApp:HomeController:installation';
+            return array('controller'=>$controller,'args'=>array());
+        }
+    )
+);
+
+RouterCollection::route(
+    'working-with-routes',
+    new Route('/working-with-routes', function(){
+            $controller = 'DemoApp:HomeController:workWithRoutes';
+            return array('controller'=>$controller,'args'=>array());
+        }
+    )
+);
+
+RouterCollection::route(
+    'my-first-controller',
+    new Route('/my-first-controller', function(){
+            $controller = 'DemoApp:HomeController:myFirstController';
+            return array('controller'=>$controller,'args'=>array());
+        }
+    )
+);
+
+RouterCollection::route(
+    'my-first-view',
+    new Route('/my-first-view', function(){
+            $controller = 'DemoApp:HomeController:myFirstView';
             return array('controller'=>$controller,'args'=>array());
         }
     )

@@ -8,6 +8,7 @@
 namespace DemoApp\Controller;
 
 
+use Jenssegers\Agent\Agent;
 use Syph\Controller\BaseController;
 use Syph\View\View;
 
@@ -15,18 +16,37 @@ class HomeController extends BaseController
 {
 
     public function index(){
-        
-        return View::render($this->createView('DemoApp:frontend/index.html.twig'),array());
+        $agent = new Agent();
+        if($agent->isMobile()){
+            return View::render($this->createView('DemoApp:frontend/index_mobile.html.twig'),array());
+        }else{
+            return View::render($this->createView('DemoApp:frontend/index.html.twig'),array());
+        }
     }
 
     public function documentation(){
 
-        return View::render($this->createView('DemoApp:docs/docs.html.twig'),array());
+        return View::render($this->createView('DemoApp:docs/docs.html.twig'),['class_active'=>'link-concept']);
     }
 
-    public function download(){
+    public function installation(){
 
-        return View::render($this->createView('DemoApp:docs/download.html.twig'),array());
+        return View::render($this->createView('DemoApp:docs/installation.html.twig'),['class_active'=>'link-installation']);
+    }
+
+    public function workWithRoutes(){
+
+        return View::render($this->createView('DemoApp:docs/workWithRoutes.html.twig'),['class_active'=>'link-work-with-routes']);
+    }
+
+    public function myFirstController(){
+
+        return View::render($this->createView('DemoApp:docs/myFirstController.html.twig'),['class_active'=>'link-first-controller']);
+    }
+
+    public function myFirstView(){
+
+        return View::render($this->createView('DemoApp:docs/myFirstView.html.twig'),['class_active'=>'link-first-view']);
     }
 
 
