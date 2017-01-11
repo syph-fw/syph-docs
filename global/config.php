@@ -7,12 +7,5 @@
  */
 
 return array(
-    'environment' => array(
-        'dev' => array(
-            'debug' => true
-        ),
-        'prod' => array(
-            'debug' => false
-        ),
-    ),
+    'environment' => 'dev'
 );
