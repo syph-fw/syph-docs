@@ -40,6 +40,22 @@ class HomeController extends BaseController
         ]);
     }
 
+    public function webServerConfiguration()
+    {
+        return View::render($this->createView('DemoApp:docs/webServerConfiguration.html.twig'),[
+            'class_active'=>'link-installation',
+            'menu_active'=>'m1'
+        ]);
+    }
+
+    public function structuresDirectories()
+    {
+        return View::render($this->createView('DemoApp:docs/structuresDirectories.html.twig'),[
+            'class_active'=>'structures-directories',
+            'menu_active'=>'m1'
+        ]);
+    }
+
     public function workWithRoutes(){
 
         return View::render($this->createView('DemoApp:docs/workWithRoutes.html.twig'),[

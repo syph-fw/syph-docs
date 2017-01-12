@@ -1,0 +1,118 @@
+{% extends 'layout_docs.html.twig' %}
+{% block title %}Bem vindo ao Syph{% endblock %}
+{% block body %}
+
+    <header class="site-header">
+
+    {% include 'blocks/logo_nav_top_bar.html.twig' %}
+
+    </header>
+    <main class="container">
+        <div class="row">
+
+            <!-- Sidebar -->
+            {% include 'blocks/sidebar_menu.html.twig' %}
+            <!-- Main content -->
+            <article class="col-md-9 col-sm-9 main-content" role="main">
+
+                <header>
+                    <h1>Estrutura de Diretórios</h1>
+                    <p>O Syph possui uma estrutura de pastas bem definida, e ao mesmo tempo oferece ao desenvolvedor a liberdade de criação de novas pastas.</p>
+                    <p>A instalação do syph-framework está distribuída na seguinte estrutura:</p>
+                    <div class="code-window">
+                        <div class="code-preview">
+
+                            <div class="dir-explain">
+                                <code class="url">app/</code>
+                                <ul class="files">
+                                    <li>
+                                        <code>DemoApp/</code>
+                                        <ul class="files">
+                                            <li><code>Config/</code></li>
+                                            <li><code>Controller/</code></li>
+                                            <li><code>Model/</code></li>
+                                            <li><code>View/</code></li>
+                                            <li><code>DemoApp.php</code></li>
+                                        </ul>
+                                    </li>
+                                    <li><code>AppKernel.php</code></li>
+                                </ul>
+                                <code class="url">global/</code><br>
+                                <code class="url">public/</code><br>
+                                <code class="url">storage/</code><br>
+                                <code class="url">vendor/</code>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Arquivo/Deretório</th>
+                                        <th>Descrição</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><code>app/</code></td>
+                                        <td>O diretório app é onde ficam salvas as aplicações que o framework reconhece,
+                                            ou seja, o código das suas aplicações, que devem estar dentro de um sub-diretório com sufixo 'App'. <br> Neste diretório apenas o arquivo AppKernel.php é reconhecido,
+                                            onde nele serão registradas as aplicações, contudo toda aplicação registrada no AppKernel deve ter
+                                            seu diretório localizado dentro do diretório app.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>app/DemoApp/</code></td>
+                                        <td>Este diretório é o diretório de exemplo, instalado com o syph-framework, e serve para exemplificar a estrutura padr]ao do Syph, dentro deste diretório estão os sub-diretórios da aplicação.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>app/DemoApp/Config/</code></td>
+                                        <td>Diretório responsável por guardar arquivos de configuração pertencentes a determinada aplicação, no exemplo a aplicação Demo.
+                                            <br> <b>Obs.:</b> Alguns arquivos de configuração não podem ser utilizados de forma individual por aplicação, saiba mais na página de
+                                            <a href="/config-files">Arquivos de Configuração</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>app/DemoApp/Controller/</code></td>
+                                        <td>Este diretório armazena os controladores da aplicação, e não deve ter seu nome alterado.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>app/DemoApp/Model/</code></td>
+                                        <td>Diretório responsável por armazenar os modelos da aplicação, e também não deve ter seu nome alterado.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>app/DemoApp/View/</code></td>
+                                        <td>Diretório responsável por armazenar os arquivos de visão da aplicação.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>global/</code></td>
+                                        <td>Este diretório é responsável por armazenar os arquivos de configuração global do syph-framework, saiba mais na página de
+                                            <a href="/config-files">Arquivos de Configuração</a>.</td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>public/</code></td>
+                                        <td>Como o nome diz, o diretório public e o diretório público do framework, onde seus arquivos podem ser acessados pelos usuários.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>storage/</code></td>
+                                        <td>Em storage o syph-framework armazena os logs e as sessões geradas pelo próprio framework.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>vendor/</code></td>
+                                        <td>No diretório vendor estão armazenados as bibliotecas de terceiro e o próprio syph-framework.</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </header>
+
+
+
+            </article>
+            <!-- END Main content -->
+        </div>
+    </main>
+
+{% endblock %}

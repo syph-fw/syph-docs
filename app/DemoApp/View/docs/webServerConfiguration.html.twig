@@ -1,0 +1,99 @@
+{% extends 'layout_docs.html.twig' %}
+{% block title %}Bem vindo ao Syph{% endblock %}
+{% block body %}
+
+    <header class="site-header">
+
+    {% include 'blocks/logo_nav_top_bar.html.twig' %}
+
+    </header>
+    <main class="container">
+        <div class="row">
+
+            <!-- Sidebar -->
+            {% include 'blocks/sidebar_menu.html.twig' %}
+            <!-- Main content -->
+            <article class="col-md-9 col-sm-9 main-content" role="main">
+
+                <header>
+                    <h1>Configurando o webserver</h1>
+                    <p>Utilize todas as funcionalidades do Syph-Framework configurando corretamente seu webserver.</p>
+
+                    <h3>Diretório <code>public/</code></h3>
+                    <p>
+                        O diretório public é onde ficam armazenados os arquivos estáticos como CSS, JS e imagens, e o arquivo front controller <code>index.php</code>
+                        com isso devemos configurar o webserver para apontar o diretório root da aplicação para este diretório.
+                        <br>
+                        Abaixo confira as configuração para Apache e Nginx.</p>
+                    <h3>Apache</h3>
+                    <pre class="line-numbers"><code class="language-apacheconf">
+&lt;VirtualHost *:80&gt;
+    ServerName domain.com
+    ServerAlias www.domain.com
+
+    DocumentRoot /var/www/project/public
+    &lt;Directory /var/www/project/public&gt;
+        AllowOverride All
+        Order Allow,Deny
+        Allow from All
+    &lt;/Directory&gt;
+
+&lt;/VirtualHost&gt;
+</code></pre>
+                    <h3>Nginx</h3>
+                    <pre class="line-numbers"><code class="language-nginx">
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/html/syph-fw/public;
+
+        # Add index.php to the list if you are using PHP
+        index index.php;
+
+        server_name project.com;
+
+        # nginx configuration
+        location ~* \.(?:css|js|png|jpeg|gif|woff|woff2|ttf)$ {
+
+        }
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+                index index.php;
+
+                if (!-e $request_filename){
+                        root /var/www/project/public;
+                        rewrite ^(.+)$ /index.php?path=$1;
+                }
+        }
+        location ~ ^/index\.php(/|$) {
+                fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+                if (!-f $document_root$fastcgi_script_name) {
+                        return 404;
+                }
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                fastcgi_index index.php;
+                include fastcgi_params;
+                fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+
+        }
+
+        location ~ \.php$ {
+            return 404;
+        }
+
+}
+</code></pre>
+                </header>
+
+
+
+            </article>
+            <!-- END Main content -->
+        </div>
+    </main>
+
+{% endblock %}
