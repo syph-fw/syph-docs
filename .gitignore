@@ -11,3 +11,4 @@ storage/logs/*
 !public/assets/vendor/
 node_modules
 public/packages
+deploy.php

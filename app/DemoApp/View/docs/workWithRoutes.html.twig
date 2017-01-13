@@ -25,6 +25,8 @@
                     <p>O arquivo vem configurado da seguinte maneira:</p>
                     <pre class="line-numbers"><code class="language-php">
 $router->add('/', 'DemoApp:HomeController:index');
+// ou
+$router->addAny('/', 'DemoApp:HomeController:index');
 </code></pre>
                     <p>A rota acima é a responsável pela pagina inicial da instalação do framework, configure as rotas utilizando este guia.</p>
                     <div class="callout callout-syph" role="alert">
@@ -58,6 +60,45 @@ $router->addGet('/', 'DemoApp:HomeController:index');
 $router->addPost('/test/post', 'DemoApp:HomeController:testPost');
 </code></pre>
                     <p>A rota declarada acima restringe as requisições ao caminho <code>'/test/post'</code> apenas por requisições do tipo <code>POST</code>.</p>
+                </section>
+                <section>
+                    <h2>Dando nome as rotas</h2>
+                    <p>As rotas pode ter nomes específicos, assim podem ser facilmente visualizadas em outras partes da aplicação, apenas chamando seu nome,e passando seus possíveis parâmetros.</p>
+                    <pre class="line-numbers"><code class="language-php">
+$router->add(['name'=>'home','path'=>'/'], 'DemoApp:HomeController:index');
+</code></pre>
+                    <p>Para declarar um nome a uma rota, utilize um array no primeiro parâmetro e especifique a chave <code>name</code>, lembrando, que ao especificar a chave name a chave <code>path</code>, deve ser criada para a rota saber por qual URL ela irá ser chamada.</p>
+                </section>
+                <section>
+                    <h2>Parâmetros na URL</h2>
+                    <p>As rotas no syph-framework permitem a utilização de parametros passados pela URL, tornando as rotas do sistema mais amigáveis, e não excluindo a forma tradicional de passagem de parâmtros utilizando o idendificador '?' após o fim da URL.</p>
+                    <pre class="line-numbers"><code class="language-http">
+http://domain.com/teste/show?id=1
+</code></pre>
+                    <p>A URL acima pode ser substituida por uma mais amigável se combinada com uma rota que espere os parâmetros acima.</p>
+                    <pre class="line-numbers"><code class="language-php">
+$router->add('/teste/{id}/show', 'DemoApp:HomeController:testeShow');
+</code></pre>
+                    <pre class="line-numbers"><code class="language-http">
+http://domain.com/teste/1/show
+</code></pre>
+                    <p>A rota declarada acima utiliza uma marcação especial na string do parâmetro <code>path</code> que são as chaves (<code>{ }</code>), envolvendo um identificador, como na rota anterior: <code>{id}</code>.</p>
+                    <p>Porem atenção os parametros declarados nas rotas, devem ter o mesmo nome nos controladores que as receberão. por exmplo:</p>
+                    <pre class="line-numbers"><code class="language-php">
+public function testeShow($id){
+...
+}
+</code></pre>
+                    <p>Rotas com mais de um parâmetro devem seguir a mesma ordem de declaração nos parâmetros do controlador.</p>
+                    <pre class="line-numbers"><code class="language-php">
+//rounting.php
+$router->add('/teste/{id}/show/{name}', 'DemoApp:HomeController:testeShow');
+
+//HomeController.php
+public function testeShow($id,$name){
+...
+}
+</code></pre>
                 </section>
 
 

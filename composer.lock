@@ -298,12 +298,12 @@
             "version": "1.0.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kherge-abandoned/php-json.git",
+                "url": "https://github.com/kherge-php/json.git",
                 "reference": "60c696c9370a1e5136816ca557c17f82a6fa83f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kherge-abandoned/php-json/zipball/60c696c9370a1e5136816ca557c17f82a6fa83f1",
+                "url": "https://api.github.com/repos/kherge-php/json/zipball/60c696c9370a1e5136816ca557c17f82a6fa83f1",
                 "reference": "60c696c9370a1e5136816ca557c17f82a6fa83f1",
                 "shasum": ""
             },
@@ -1591,16 +1591,16 @@
         },
         {
             "name": "sylabs/syph-framework",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sylabs/syph-framework.git",
-                "reference": "611bde10d155a5fe03fed6f76ff2ae239d021513"
+                "reference": "d408bd4cd71d0940ef3032ed4c34c041fc0abb48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sylabs/syph-framework/zipball/611bde10d155a5fe03fed6f76ff2ae239d021513",
-                "reference": "611bde10d155a5fe03fed6f76ff2ae239d021513",
+                "url": "https://api.github.com/repos/sylabs/syph-framework/zipball/d408bd4cd71d0940ef3032ed4c34c041fc0abb48",
+                "reference": "d408bd4cd71d0940ef3032ed4c34c041fc0abb48",
                 "shasum": ""
             },
             "require": {
@@ -1635,7 +1635,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-01-10T01:13:45+00:00"
+            "time": "2017-01-11T23:13:24+00:00"
         },
         {
             "name": "symfony/cache",

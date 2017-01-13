@@ -80,6 +80,14 @@ class HomeController extends BaseController
         ]);
     }
 
+    public function connectingDatabase(){
+
+        return View::render($this->createView('DemoApp:docs/connectingDatabase.html.twig'),[
+            'class_active'=>'connecting-database',
+            'menu_active'=>'m1'
+        ]);
+    }
+
     public function routerComponent(){
 
         return View::render($this->createView('DemoApp:components/routerComponent.html.twig'),[

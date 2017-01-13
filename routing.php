@@ -19,6 +19,7 @@ $router->addGet(['name' => 'structures-directories', 'path' => '/structures-dire
 $router->addGet(['name'=>'working-with-routes','path'=>'/working-with-routes'],'DemoApp:HomeController:workWithRoutes');
 $router->addGet(['name'=>'my-first-controller','path'=>'/my-first-controller'],'DemoApp:HomeController:myFirstController');
 $router->addGet(['name'=>'my-first-view','path'=>'/my-first-view'],'DemoApp:HomeController:myFirstView');
+$router->addGet(['name'=>'connecting-database','path'=>'/connecting-database'],'DemoApp:HomeController:connectingDatabase');
 $router->addGet(['name'=>'router-component','path'=>'/router'],'DemoApp:HomeController:routerComponent');
 $router->addGet(['name'=>'container-component','path'=>'/container'],'DemoApp:HomeController:containerComponent');
 $router->addGet(['name'=>'form-component','path'=>'/form'],'DemoApp:HomeController:formComponent');
