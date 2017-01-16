@@ -14,6 +14,7 @@ $router = new RouterCollection();
 $router->addGet(['name'=>'home','path'=>'/'],'DemoApp:HomeController:index');
 $router->addGet(['name'=>'docs','path'=>'/docs'],'DemoApp:HomeController:documentation');
 $router->addGet(['name'=>'installation','path'=>'/installation'],'DemoApp:HomeController:installation');
+$router->addGet(['name'=>'configuration','path'=>'/configuration'],'DemoApp:HomeController:configuration');
 $router->addGet(['name'=>'web-server-configuration','path'=>'/installation/web-server-configuration'],'DemoApp:HomeController:webServerConfiguration');
 $router->addGet(['name' => 'structures-directories', 'path' => '/structures-directories'],'DemoApp:HomeController:structuresDirectories');
 $router->addGet(['name'=>'working-with-routes','path'=>'/working-with-routes'],'DemoApp:HomeController:workWithRoutes');

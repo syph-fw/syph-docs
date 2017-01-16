@@ -1,45 +1,10 @@
 {% extends 'layout_docs.html.twig' %}
 {% block title %}Bem vindo ao Syph{% endblock %}
-{% block custom_css %}
-    <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}" type="text/css" />
-
-{% endblock %}
 {% block body %}
 
     <header class="site-header">
 
-        <!-- Top navbar & branding -->
-        <nav class="navbar navbar-default">
-            <div class="container">
-
-                <!-- Toggle buttons and brand -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
-                        <span class="glyphicon glyphicon-option-vertical"></span>
-                    </button>
-
-                    <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <a class="navbar-brand" href="/"><img src="{{ asset('/assets/images/logo.png') }}"></a>
-                </div>
-                <!-- END Toggle buttons and brand -->
-
-                <!-- Top navbar -->
-                <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="/docs">Documentação</a></li>
-                        <li><a target="_blank" href="https://github.com/sylabs/syph-application">Download</a></li>
-                    </ul>
-                </div>
-                <!-- END Top navbar -->
-
-            </div>
-        </nav>
-        <!-- END Top navbar & branding -->
+        {% include 'blocks/logo_nav_top_bar.html.twig' %}
 
     </header>
     <main class="container">
@@ -53,26 +18,89 @@
 
                 <header>
                     <h1>Meu primeiro Controller</h1>
-                    <p>A partir de agora vamos conhecer uma jeito novo de trabalhar com aplicações web.</p>
+                    <p>Seguindo os conceitos do padrão MVC, o syph-framework fornece os Controllers para o usuário definir suas regras de negócio e poder chamar uma possível view ou fazer uma possível chamada ao banco de dados.</p>
+                    <p>As classes Controllers, extendem a classe <code>BaseController</code>, que possuí conexão direta ao Container de Serviços do Syph, provendo a todos os Controllers, acesso a todos os serviços registrados no framework</p>
+                    <pre class="line-numbers"><code class="language-php">
+namespace DemoApp\Controller;
 
+use Syph\Controller\BaseController;
+
+class HomeController extends BaseController
+{
+
+    public function test(){
+        $session = $this->get('http.session');
+        $logger = $this->get('logger');
+    }
+
+}
+</code></pre>
+                    <p>No exemplo acima temos dois serviços sendo chamados pelo controllador de forma simples através do método <code>get()</code></p>
+                    <p>Então para criar nosso primeiro Controller, precisamos de uma classe com sufixo "Controller", dentro do diretório <code>app/DemoApp/Controller</code> extendendo a classe <code>BaseController</code></p>
+                    <pre class="line-numbers"><code class="language-php">
+//TestController.php
+namespace DemoApp\Controller;
+
+use Syph\Controller\BaseController;
+
+class TestController extends BaseController
+{
+
+    public function test(){
+        return 'Hello World';
+    }
+
+}
+</code></pre>
+                    <p>Com o Controller criado, só precisamos apontar uma rota para ele e testar.</p>
+                    <pre class="line-numbers"><code class="language-php">
+//routing.php
+$router->add('/test','DemoApp:HomeController:test');
+</code></pre>
+                    <p>Ao acessar a URL <code>http://domain.com/test</code> frase "Hello World" deve aparece na tela.</p>
                 </header>
-
-                {#<section>#}
-                {#<h2 id="ftt">First topic title</h2>#}
-                {#<p></p>#}
-
-                {#<div class="code-window">#}
-                {#<div class="code-preview">#}
-
-                {#</div>#}
-
-                {#<pre class="line-numbers"><code class="language-markup">#}
-
-                {#</code></pre>#}
-                {#</div>#}
-
-                {#</section>#}
-
+                <section>
+                    <h2>Renderizando Views</h2>
+                    <p>Até agora nosso controller não renderiza páginas HTML,
+                        para fazer isso de forma correta devemos retornar do método no controlador o método render da classe
+                        <code>View</code>, </p>
+                    <pre class="line-numbers"><code class="language-php">
+//TestController.php
+public function test(){
+    return View::render($this->createView('DemoApp:test.php'));
+}
+</code></pre>
+                    <p>A classe <code>View</code> deve ser chamada de forma estática, e deve
+                        obrigatóriamente conter 1 parâmetro, que deve sempre ser uma chamada à função createView da classe
+                    <code>BaseController</code>, opcionalmente pode ser passado um array associativo, com variáveis a serem
+                        passadas para o arquivo de visão, esta forma de chamada da classe <code>View</code>, será abordada no tutorial,
+                        <a href="/my-first-view">Minha primeira View</a>.</p>
+                    <div class="code-tabs">
+                        <pre class="line-numbers"><code class="language-php">
+//test.php
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Teste de View&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Teste de View&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                        <pre class="line-numbers"><code class="language-twig">
+//test.html.twig
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Teste de View&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Teste de View&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    </div>
+                    <p>Estes dois exemplos de views são básicos, para mostrar as funções de renderização do Syph, no próximo capitulo, entraremos mais afundo neste tópico.</p>
+                </section>
 
             </article>
             <!-- END Main content -->

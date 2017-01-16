@@ -40,6 +40,14 @@ class HomeController extends BaseController
         ]);
     }
 
+    public function configuration(){
+
+        return View::render($this->createView('DemoApp:docs/configuration.html.twig'),[
+            'class_active'=>'link-configuration',
+            'menu_active'=>'m1'
+        ]);
+    }
+
     public function webServerConfiguration()
     {
         return View::render($this->createView('DemoApp:docs/webServerConfiguration.html.twig'),[

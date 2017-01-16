@@ -17,10 +17,48 @@
 
                 <header>
                     <h1>Minha primeira View</h1>
-                    <p>O syph-framework aceita a forma padrão de view em arquivos <code>.php</code> e em arquivos da template engine Twig, <code>.twig</code>.</p>
-                    <pre class="line-numbers"><code class="language-twig">
-&lt;p class=&quot;hey&quot;&gt;{{ '{{ teste.t }}' }}&lt;/p&gt;
+
+                    <p>Na página <a href="/my-first-controller">"Meu Primeiro Controller"</a> renderizamos uma View simples para mostrar a integração
+                    da camada de controle com a visão, agora vamos melhorar a View anterior, adicionando parâmetros passados pelo Controller
+                    para exemplificar situações comuns na criação de aplicações WEB.</p>
+
+                    <pre class="line-numbers"><code class="language-php">
+//TestController.php
+public function test(){
+    $title = &quot;Teste de View&quot;;
+    return View::render($this->createView('DemoApp:test.php'),array(&quot;title&quot; =&gt; $title));
+}
 </code></pre>
+                    <p>Como citado na pagina <a href="/my-first-controller">"Meu Primeiro Controller"</a>
+                    as chamadas à uma View podem receber um array associativo com as variáveis que se desejam ser
+                    acessadas no arquivo de visão, como no exemplo abaixo, a variável <code>$title</code>
+                        sendo acessada nos arquivos de visão.</p>
+                    <div class="code-tabs">
+                        <pre class="line-numbers"><code class="language-php">
+//test.php
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;?php echo $title; ?&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;&lt;?php echo $title; ?&gt;&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                        <pre class="line-numbers"><code class="language-twig">
+//test.html.twig
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;{{ "{{ title }}" }}&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;{{ "{{ title }}" }}&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    </div>
+                    <p>O syph-framework aceita a forma padrão de view em arquivos <code>.php</code>
+                        e em arquivos da template engine Twig, <code>.twig</code>.</p>
                 </header>
 
 

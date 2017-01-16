@@ -25,3 +25,7 @@ a, a:focus, a:hover,
 .callout-syph{
     border-left-color:#1d6391;
 }
+.jumbotron{
+    height: 100vh;
+    margin-bottom: 0;
+}
